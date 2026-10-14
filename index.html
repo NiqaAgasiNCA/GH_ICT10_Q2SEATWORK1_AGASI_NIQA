@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+<script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+<title>Glee Club ✧ Member Check</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Nunito', sans-serif;
+    color: #51436d;
+    background:
+        radial-gradient(circle at 15% 20%, #ffe1ef 0, transparent 30%),
+        radial-gradient(circle at 85% 80%, #e4dcff 0, transparent 32%),
+        #faf7ff;
+}
+
+.card {
+    width: 100%;
+    max-width: 370px;
+    padding: 34px 27px 25px;
+    border: 1px solid #e8d9f8;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 15px 45px #9d81c51c;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(
+        90deg,
+        #d6b8ff,
+        #ffc9e3,
+        #c6e6ff,
+        #e8d0ff
+    );
+}
+
+.topline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #a28bbf;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.symbol {
+    text-align: center;
+    font-size: 34px;
+    margin: 22px 0 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 27px;
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+    color: #6c548f;
+}
+
+h1 span {
+    color: #c17ba9;
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 27px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #a397b6;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    color: #c1afd7;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee4f7;
+}
+
+label {
+    display: block;
+    margin: 15px 0 7px 3px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #76618f;
+}
+
+input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #e7d9f2;
+    border-radius: 12px;
+    outline: none;
+    background: #fcfaff;
+    color: #65527d;
+    font: inherit;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+input::placeholder {
+    color: #c2b4d0;
+}
+
+input:focus {
+    border-color: #c7a7e9;
+    background: white;
+    box-shadow: 0 0 0 3px #f2e9ff;
+}
+
+button {
+    width: 100%;
+    margin-top: 23px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(110deg, #bda0e7, #e7a9ce);
+    color: white;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px #c6a0df45;
+}
+
+.footer {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 10px;
+    color: #b5a4c8;
+    letter-spacing: 0.5px;
+}
+
+.star {
+    position: absolute;
+    color: #d6b8ef;
+    font-size: 17px;
+}
+
+.star.one {
+    top: 75px;
+    left: 23px;
+}
+
+.star.two {
+    top: 105px;
+    right: 24px;
+    color: #edb4d5;
+}
+
+.star.three {
+    top: 165px;
+    right: 34px;
+    font-size: 11px;
+}
+</style>
+</head>
+
+<body>
+
+<main class="card">
+
+    <div class="topline">
+        <span>✧</span>
+        Glee Club • Official
+        <span>✧</span>
+    </div>
+
+    <div class="symbol">🎤</div>
+
+    <h1>Member <span>Check</span></h1>
+
+    <p class="subtitle">
+        every voice has a place.<br>
+        let's see if you're on the list ♡
+    </p>
+
+    <div class="divider">MEMBER IDENTIFICATION</div>
+
+    <form>
+        <label for="firstName">FIRST NAME</label>
+        <input
+            type="text"
+            id="firstName"
+            placeholder="Enter your first name"
+        >
+
+        <label for="lastName">LAST NAME</label>
+        <input
+            type="text"
+            id="lastName"
+            placeholder="Enter your last name"
+        >
+
+       <button type="button" py-click="student_club">
+
+    </form>
+
+    <div class="footer">
+        ♡ sing loud · shine bright · belong ♡
+    </div>
+
+    <span class="star one">✧</span>
+    <span class="star two">✦</span>
+    <span class="star three">✧</span>
+
+</main>
+<div id="meta"></div>
+<py-script src="main.py"></py-script>
+
+</body>
+</html>
+
